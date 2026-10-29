@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+    #stage { width: 400px; height: 400px; background: transparent; }
+    #stage svg { display: block; background: transparent; }
+  </style>
+</head>
+<body>
+  <div id="stage"></div>
+  <script type="module">
+    import { createGrokBot } from '../../third_party/grokbot/grok-player.js';
+
+    const params = new URLSearchParams(location.search);
+    const state = params.get('state') || 'idle';
+    const size = Number(params.get('size') || 400);
+    const stage = document.querySelector('#stage');
+    stage.style.width = `${size}px`;
+    stage.style.height = `${size}px`;
+
+    window.bot = createGrokBot(stage, {
+      size,
+      state,
+      seed: params.get('seed') || 'stopwatch',
+      theme: { ink: [1, 1, 1], spot: [0, 0, 0], cutout: true },
+      frozenAt: 0,
+      firstPhase: 0,
+    });
+    window.bot.ready.then(() => { window.bakerReady = true; });
+  </script>
+</body>
+</html>

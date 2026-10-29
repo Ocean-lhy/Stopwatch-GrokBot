@@ -1,0 +1,9 @@
+build/
+managed_components/
+dependencies.lock
+sdkconfig
+sdkconfig.old
+.vscode/
+tools/grokbot/node_modules/
+build/grokbot-frames/
+tools/grokbot/__pycache__/
