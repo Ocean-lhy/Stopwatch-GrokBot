@@ -51,6 +51,16 @@ idf.py build
 idf.py -p /dev/ttyACM0 flash monitor
 ```
 
+Web Burner 需要使用从 `0x0` 烧录的完整镜像，不能直接上传应用分区
+`build/stopwatch_grokbot.bin`：
+
+```sh
+idf.py merge-bin -o stopwatch_grokbot-full.bin
+```
+
+生成后上传 `build/stopwatch_grokbot-full.bin`。该文件已合并 bootloader、
+分区表和应用镜像。
+
 `main/idf_component.yml` 会自动获取 M5PM1、M5IOE1、I2C bus 组件；
 `components/M5GFX` 固定到 0.2.35。
 
