@@ -5,9 +5,8 @@
 
 ![StopWatch GrokBot preview](docs/preview.png)
 
-> 图中是 ESP Workbench 的真实固件 framebuffer，不是网页合成图。
 
-IDLE 正放/倒放 GIF（Web Burner 封面可用）：
+IDLE 正放/倒放 GIF：
 
 ![IDLE animation](docs/grokbot-idle.gif)
 
